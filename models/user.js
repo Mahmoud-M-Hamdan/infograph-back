@@ -72,8 +72,7 @@ User.verify = async function (email, password) {
   if (!user) {
     throw "there is no user with this email";
   }
- 
-  const isMatch = await bcrypt.compare(password, user.password);
+ const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
     throw "the email or password is invalid";
